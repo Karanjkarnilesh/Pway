@@ -28,26 +28,18 @@ const Sidebar = ({ isSidebarClose, setIsSidebarClose }) => {
   return (
 
     <>
-      <div className="flex items-center gap-4">
-             <button
-               className="text-xl cursor-pointer"
-               onClick={() => setIsSidebarClose(!isSidebarClose)}
-             >
-               <FaBars fontSize="24px" />
-             </button>
-           </div>
       <div className={` h-screen bg-white shadow-md border-r text-sm font-medium ${isSidebarClose ? 'maxwidth' : 'minwidth'
         }`}>
           {isSidebarClose &&
         <img src="/images/logo.jpg" alt="Pipeway" className="h-10 " />
           }
-        <ul className={`max-w-256 space-y-1 p-2 text-blue-900`}>
+        <ul className={`width-82% space-y-1 p-2 text-blue-900`}>
 
           {/* Dashboard dropdown */}
           <li>
             <button
               onClick={() => setIsDashboardOpen(!isDashboardOpen)}
-              className="flex justify-between items-center w-full px-3 py-2 hover:bg-gray-100"
+              className="flex justify-between items-center  px-3 py-2 hover:bg-gray-100"
             >
               <div className="flex items-center gap-2">
                 <FaTachometerAlt  fontSize="24px"/>
@@ -72,7 +64,7 @@ const Sidebar = ({ isSidebarClose, setIsSidebarClose }) => {
           <li>
             <button
               onClick={() => setIsBatchReportOpen(!isBatchReportOpen)}
-              className="flex justify-between items-center w-full px-3 py-2 hover:bg-gray-100"
+              className="flex justify-between items-center  px-3 py-2 hover:bg-gray-100"
             >
               <div className="flex items-center gap-2">
                 <FaCalendarAlt fontSize="24px" />
@@ -96,10 +88,10 @@ const Sidebar = ({ isSidebarClose, setIsSidebarClose }) => {
           <li>
             <button
               onClick={() => setIsBatchReportOpen(!isBatchReportOpen)}
-              className="flex justify-between items-center w-full px-3 py-2 hover:bg-gray-100"
+              className="flex justify-between items-center  px-3 py-2 hover:bg-gray-100"
             >
               <div className="flex items-center gap-2">
-                <FaExchangeAlt />
+                <FaExchangeAlt fontSize="24px" />
                  {isSidebarClose &&
                 <span>Document Transfer</span>
                  }

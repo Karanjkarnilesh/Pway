@@ -1,21 +1,28 @@
-import { useState } from 'react'
+
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Sidebar from './Pages/Sidebar/Sidebar'
-import Navbar from './Pages/Navbar/Navbar'
-import Footer from './Pages/Footer/Footer'
 
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from './Pages/Components/Login/Login';
 function App() {
 
-  const [isSidebarClose, setIsSidebarClose] = useState(false);
+  
   return (
     <>
-      <div className=''>
-        <Navbar  isSidebarClose ={isSidebarClose} setIsSidebarClose={setIsSidebarClose}/>
-         <Sidebar isSidebarClose ={isSidebarClose} setIsSidebarClose={setIsSidebarClose} />
-        {/* <Footer /> */}
-         </div>
+      <BrowserRouter>
+        <Routes>
+          {/* <Route path="/" element={<Dasboard />}> */}
+            <Route index element={<Login />} />
+            {/* <Route path="batchreport" element={<BatchReports />} /> */}
+          
+        </Routes>
+      </BrowserRouter>
+
+
+
+
+
 
     </>
   )

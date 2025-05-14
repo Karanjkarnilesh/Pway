@@ -8,19 +8,20 @@ import {
   FaUserCircle,
   FaMoneyCheckAlt,
 } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
-const Navbar = ({isSidebarClose,setIsSidebarClose}) => {
-  
+
+const Navbar = ({ isSidebarClose, setIsSidebarClose }) => {
+
   return (
-    <nav className={`navwidth bg-[#B8113A] text-white flex items-center justify-between px-4 py-2 shadow-md float-right
-       ${
-        isSidebarClose ? 'navminwidth' : 'navmaxwidth'
+    <nav className={`navminwidth bg-[#B8113A] text-white flex items-center justify-between px-4 py-2 shadow-md float-right
+       ${isSidebarClose ? 'navminwidth' : 'navmaxwidth'
       }`
-      }>
+    }>
 
       {/* Left: Logo + Hamburger */}
-   
-        <div className="flex items-center gap-4">
+
+      <div className="flex items-center gap-4">
         <button
           className="text-xl cursor-pointer"
           onClick={() => setIsSidebarClose(!isSidebarClose)}
@@ -33,15 +34,16 @@ const Navbar = ({isSidebarClose,setIsSidebarClose}) => {
       {/* Right: Icons */}
       <div className="flex items-center gap-6 text-lg">
         {/* Bell with badge */}
-        <div className="relative cursor-pointer">
-          <FaBell />
-          <span className="absolute -top-2 -right-2 bg-orange-500 text-xs w-4 h-4 flex items-center justify-center rounded-full">
-            8
-          </span>
-        </div>
-        <div className="relative cursor-pointer">
-          <FaUserFriends />
-        </div>
+        <Link to="notifaction">
+          <div className="relative cursor-pointer">
+            <FaBell />
+          </div>
+        </Link>
+        <Link to="/switchuser">
+          <div className="relative cursor-pointer">
+            <FaUserFriends />
+          </div>
+        </Link>
         <div className="relative cursor-pointer">
           <FaMoneyCheckAlt />
         </div>
